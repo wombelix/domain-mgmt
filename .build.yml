@@ -58,7 +58,7 @@ tasks:
       cat << 'EOF' > ~/.terraformrc
       provider_installation {
         dev_overrides {
-          "inwx/inwx" = "~/fork_inwx_terraform-provider-inwx"
+          "inwx/inwx" = "/home/build/fork_inwx_terraform-provider-inwx"
         }
         direct {}
       }
