@@ -1,0 +1,120 @@
+# SPDX-FileCopyrightText: 2025 Dominik Wombacher <dominik@wombacher.cc>
+#
+# SPDX-License-Identifier: MIT
+
+image: debian/stable
+
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - git
+
+sources:
+  - https://git.sr.ht/~wombelix/domain-mgmt
+  - https://git.sr.ht/~wombelix/build-helper-scripts
+
+secrets:
+  - 5b076ab5-1361-4d71-905b-4ff8c836c62c  # git mirror deploy key
+  - 9d963538-9bc6-4819-addf-0d508ab98de8  # iac-opentofu
+  - 179f3ead-c9e6-46f4-a3fb-ded102bce32a  # iac-opentofu_tfvars
+  - fd427a40-5746-4215-b0a3-5de34364436b  # inwx_wombacher-api-ci-domain
+
+environment:
+  GIT_MIRROR_SSH_KEY: ~/.ssh/5b076ab5-1361-4d71-905b-4ff8c836c62c
+  GIT_MIRROR_GITHUB: git@github.com:wombelix/domain-mgmt.git
+  GIT_MIRROR_GITLAB: git@gitlab.com:wombelix/domain-mgmt.git
+  GIT_MIRROR_CODEBERG: git@codeberg.org:wombelix/domain-mgmt.git
+  GO111MODULE: 'on'
+
+tasks:
+  - mirror: |
+      cd build-helper-scripts
+      source git-mirror.sh
+      cd ..
+
+      cd domain-mgmt
+
+      git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITHUB"
+      git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITLAB"
+      git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_CODEBERG"
+
+  - setup_golang: |
+      # Install Go to build inwx/inwx provider from fork with backports
+      curl -sSfLO https://go.dev/dl/go1.23.4.linux-amd64.tar.gz
+      sudo rm -rf /usr/local/go && sudo tar -C /usr/local/ -xzf go1.23.4.linux-amd64.tar.gz
+      sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
+
+  - build: |
+      # build inwx/inwx provider from fork with backports
+      git clone -b fork-backports --single-branch https://github.com/wombelix/fork_inwx_terraform-provider-inwx.git
+      cd fork_inwx_terraform-provider-inwx
+      go build -o terraform-provider-inwx
+      chmod +x terraform-provider-inwx
+
+  - config: |
+      # override config required till published inwx/inwx includes the patches
+      cat << 'EOF' > ~/.terraformrc
+      provider_installation {
+        dev_overrides {
+          "inwx/inwx" = "~/fork_inwx_terraform-provider-inwx"
+        }
+        direct {}
+      }
+      EOF
+
+  - setup: |
+      # Set up the OpenTofu repository
+      sudo install -m 0755 -d /etc/apt/keyrings
+      curl -fsSL https://get.opentofu.org/opentofu.gpg | sudo tee /etc/apt/keyrings/opentofu.gpg >/dev/null
+      curl -fsSL https://packages.opentofu.org/opentofu/tofu/gpgkey | sudo gpg --no-tty --batch --dearmor -o /etc/apt/keyrings/opentofu-repo.gpg >/dev/null
+      sudo chmod a+r /etc/apt/keyrings/opentofu.gpg /etc/apt/keyrings/opentofu-repo.gpg
+      echo \
+        "deb [signed-by=/etc/apt/keyrings/opentofu.gpg,/etc/apt/keyrings/opentofu-repo.gpg] https://packages.opentofu.org/opentofu/tofu/any/ any main
+      deb-src [signed-by=/etc/apt/keyrings/opentofu.gpg,/etc/apt/keyrings/opentofu-repo.gpg] https://packages.opentofu.org/opentofu/tofu/any/ any main" | \
+        sudo tee /etc/apt/sources.list.d/opentofu.list > /dev/null
+      sudo chmod a+r /etc/apt/sources.list.d/opentofu.list
+
+      # Install OpenTofu
+      sudo apt-get update
+      sudo apt-get install -y tofu
+
+  - init: |
+      set +x
+      source ~/.secret_iac-opentofu
+      source ~/.secret_iac-opentofu_tfvars
+      source ~/.secret_inwx_wombacher-api-ci-domain
+      set -x
+
+      cd domain-mgmt/
+
+      tofu init -input=false
+
+  - plan: |
+      set +x
+      source ~/.secret_iac-opentofu
+      source ~/.secret_iac-opentofu_tfvars
+      source ~/.secret_inwx_wombacher-api-ci-domain
+      set -x
+
+      cd domain-mgmt/
+
+      tofu plan -input=false -compact-warnings -out=plan.file
+
+  - apply: |
+      set +x
+      source ~/.secret_iac-opentofu
+      source ~/.secret_iac-opentofu_tfvars
+      source ~/.secret_inwx_wombacher-api-ci-domain
+      set -x
+
+      cd domain-mgmt/
+
+      tofu apply -input=false -compact-warnings plan.file
+      rm plan.file
+
+triggers:
+  - action: email
+    condition: failure
+    to: dominik@wombacher.cc
