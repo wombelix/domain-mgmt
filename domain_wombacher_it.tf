@@ -5,7 +5,6 @@
 module "wombacher_it" {
   source              = "./modules/domains"
   domain_name         = "wombacher.it"
-  automated_dnssec    = false
   contacts_registrant = "787984"
   contacts_billing    = "0"
   extra_data = {
