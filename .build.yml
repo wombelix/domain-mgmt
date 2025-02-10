@@ -19,7 +19,7 @@ secrets:
   - 5b076ab5-1361-4d71-905b-4ff8c836c62c  # git mirror deploy key
   - 9d963538-9bc6-4819-addf-0d508ab98de8  # iac-opentofu
   - 179f3ead-c9e6-46f4-a3fb-ded102bce32a  # iac-opentofu_tfvars
-  - fd427a40-5746-4215-b0a3-5de34364436b  # inwx_wombacher-api-ci-domain
+  - fd427a40-5746-4215-b0a3-5de34364436b  # wombacher-api-iac-opentofu-domain
 
 environment:
   GIT_MIRROR_SSH_KEY: ~/.ssh/5b076ab5-1361-4d71-905b-4ff8c836c62c
@@ -84,7 +84,7 @@ tasks:
       set +x
       source ~/.secret_iac-opentofu
       source ~/.secret_iac-opentofu_tfvars
-      source ~/.secret_inwx_wombacher-api-ci-domain
+      source ~/.secret_wombacher-api-iac-opentofu-domain
       set -x
 
       cd domain-mgmt/
@@ -95,7 +95,7 @@ tasks:
       set +x
       source ~/.secret_iac-opentofu
       source ~/.secret_iac-opentofu_tfvars
-      source ~/.secret_inwx_wombacher-api-ci-domain
+      source ~/.secret_wombacher-api-iac-opentofu-domain
       set -x
 
       cd domain-mgmt/
@@ -106,7 +106,7 @@ tasks:
       set +x
       source ~/.secret_iac-opentofu
       source ~/.secret_iac-opentofu_tfvars
-      source ~/.secret_inwx_wombacher-api-ci-domain
+      source ~/.secret_wombacher-api-iac-opentofu-domain
       set -x
 
       cd domain-mgmt/
