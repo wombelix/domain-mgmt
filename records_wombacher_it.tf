@@ -2,14 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-resource "inwx_nameserver_record" "wombacher_it_a_centrex" {
-  domain  = "wombacher.it"
-  name    = "centrex.wombacher.it"
-  type    = "A"
-  content = "92.60.208.138"
-  ttl     = 3600
-}
-
 resource "inwx_nameserver_record" "wombacher_it_a_ns1" {
   domain  = "wombacher.it"
   name    = "ns1.wombacher.it"
