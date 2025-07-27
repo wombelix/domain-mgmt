@@ -74,30 +74,6 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_1" {
   ttl     = 300
 }
 
-resource "inwx_nameserver_record" "wombacher_it_caa_1" {
-  domain  = "wombacher.it"
-  name    = ""
-  type    = "CAA"
-  content = "0 issue \"letsencrypt.org\""
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_it_caa_2" {
-  domain  = "wombacher.it"
-  name    = ""
-  type    = "CAA"
-  content = "0 issuewild \"letsencrypt.org\""
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_it_caa_3" {
-  domain  = "wombacher.it"
-  name    = ""
-  type    = "CAA"
-  content = "0 iodef \"mailto:team@wombacher.it\""
-  ttl     = 3600
-}
-
 resource "inwx_nameserver_record" "wombacher_it_cname_autoconfig" {
   domain  = "wombacher.it"
   name    = "autoconfig.wombacher.it"

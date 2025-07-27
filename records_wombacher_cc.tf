@@ -34,30 +34,6 @@ resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
   ttl     = 300
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_caa_1" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "CAA"
-  content = "0 issue \"letsencrypt.org\""
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_caa_2" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "CAA"
-  content = "0 issuewild \"letsencrypt.org\""
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_caa_3" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "CAA"
-  content = "0 iodef \"mailto:dominik@wombacher.cc\""
-  ttl     = 3600
-}
-
 resource "inwx_nameserver_record" "wombacher_cc_cname_autoconfig" {
   domain  = "wombacher.cc"
   name    = "autoconfig.wombacher.cc"
