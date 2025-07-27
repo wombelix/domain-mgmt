@@ -92,7 +92,6 @@ resource "inwx_nameserver_record" "mycloudoffice_de_cname_mbo0004_domainkey" {
 
 resource "inwx_nameserver_record" "mycloudoffice_de_mx_1" {
   domain  = "mycloudoffice.de"
-  name    = "mycloudoffice.de"
   type    = "MX"
   prio    = 10
   content = "mxext1.mailbox.org"
@@ -101,7 +100,6 @@ resource "inwx_nameserver_record" "mycloudoffice_de_mx_1" {
 
 resource "inwx_nameserver_record" "mycloudoffice_de_mx_2" {
   domain  = "mycloudoffice.de"
-  name    = "mycloudoffice.de"
   type    = "MX"
   prio    = 10
   content = "mxext2.mailbox.org"
@@ -110,7 +108,6 @@ resource "inwx_nameserver_record" "mycloudoffice_de_mx_2" {
 
 resource "inwx_nameserver_record" "mycloudoffice_de_mx_3" {
   domain  = "mycloudoffice.de"
-  name    = "mycloudoffice.de"
   type    = "MX"
   prio    = 20
   content = "mxext3.mailbox.org"
@@ -127,7 +124,6 @@ resource "inwx_nameserver_record" "mycloudoffice_de_srv_autodiscover_tcp" {
 
 resource "inwx_nameserver_record" "mycloudoffice_de_txt_spf" {
   domain  = "mycloudoffice.de"
-  name    = "mycloudoffice.de"
   type    = "TXT"
   content = "v=spf1 include:mailbox.org mx ~all"
   ttl     = 3600

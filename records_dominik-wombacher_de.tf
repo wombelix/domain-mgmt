@@ -4,7 +4,6 @@
 
 resource "inwx_nameserver_record" "dominik_wombacher_de_url_apex" {
   domain            = "dominik-wombacher.de"
-  name              = "dominik-wombacher.de"
   type              = "URL"
   content           = "https://dominik.wombacher.cc"
   url_redirect_type = "HEADER301"
