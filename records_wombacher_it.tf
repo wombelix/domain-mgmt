@@ -204,3 +204,19 @@ resource "inwx_nameserver_record" "fwd_wombacher_it_txt_1" {
   content = "v=spf1 include:spf.improvmx.com ~all"
   ttl     = 300
 }
+
+resource "inwx_nameserver_record" "wombacher_it_a_help" {
+  domain  = "wombacher.it"
+  name    = "help.wombacher.it"
+  type    = "A"
+  content = "78.46.211.229"
+  ttl     = 300
+}
+
+resource "inwx_nameserver_record" "wombacher_it_aaaa_help" {
+  domain  = "wombacher.it"
+  name    = "help.wombacher.it"
+  type    = "AAAA"
+  content = "2a01:4f8:d0a:5287::2"
+  ttl     = 300
+}
