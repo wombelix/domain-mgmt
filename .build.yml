@@ -40,30 +40,6 @@ tasks:
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITLAB"
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_CODEBERG"
 
-  - setup_golang: |
-      # Install Go to build inwx/inwx provider from fork with backports
-      curl -sSfLO https://go.dev/dl/go1.23.4.linux-amd64.tar.gz
-      sudo rm -rf /usr/local/go && sudo tar -C /usr/local/ -xzf go1.23.4.linux-amd64.tar.gz
-      sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
-
-  - build: |
-      # build inwx/inwx provider from fork with backports
-      git clone -b fork-backports --single-branch https://github.com/wombelix/fork_inwx_terraform-provider-inwx.git
-      cd fork_inwx_terraform-provider-inwx
-      go build -o terraform-provider-inwx
-      chmod +x terraform-provider-inwx
-
-  - config: |
-      # override config required till published inwx/inwx includes the patches
-      cat << 'EOF' > ~/.terraformrc
-      provider_installation {
-        dev_overrides {
-          "inwx/inwx" = "/home/build/fork_inwx_terraform-provider-inwx"
-        }
-        direct {}
-      }
-      EOF
-
   - setup: |
       # Set up the OpenTofu repository
       sudo install -m 0755 -d /etc/apt/keyrings
