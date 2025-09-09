@@ -109,30 +109,6 @@ resource "inwx_nameserver_record" "wombacher_cc_mx_3" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_ns_1" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "NS"
-  content = "ns1.wombacher.it"
-  ttl     = 86400
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_ns_2" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "NS"
-  content = "ns2.wombacher.it"
-  ttl     = 86400
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_ns_3" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "NS"
-  content = "ns3.wombacher.it"
-  ttl     = 86400
-}
-
 resource "inwx_nameserver_record" "wombacher_cc_srv_autodiscover_tcp" {
   domain  = "wombacher.cc"
   name    = "_autodiscover._tcp.wombacher.cc"

@@ -11,9 +11,9 @@ variable "nameservers" {
   type        = list(string)
   description = "list of nameservers"
   default = [
-    "ns1.wombacher.it",
-    "ns2.wombacher.it",
-    "ns3.wombacher.it"
+    "ns.inwx.de",
+    "ns2.inwx.de",
+    "ns3.inwx.eu"
   ]
 }
 
@@ -40,7 +40,7 @@ variable "master_ip" {
 variable "soa_mail" {
   type        = string
   description = "Email address for SOA record"
-  default     = "hostmaster@wombacher.it"
+  default     = "hostmaster@wombacher.cc"
 }
 
 variable "registration_period" {
@@ -64,32 +64,32 @@ variable "transfer_lock" {
 variable "contacts_registrant" {
   type        = string
   description = "Id of the registrant contact"
-  default     = "518"
+  default     = "487953"
 }
 
 variable "contacts_admin" {
   type        = string
   description = "Id of the admin contact"
-  default     = "518"
+  default     = "487953"
 }
 
 variable "contacts_tech" {
   type        = string
   description = "Id of the tech contact"
-  default     = "518"
+  default     = "487953"
 }
 
 variable "contacts_billing" {
   type        = string
   description = "Id of the tech contact"
-  default     = "518"
+  default     = "487953"
 }
 
 # CAA iodef mailto address
 variable "caa_iodef_mailto" {
   type        = string
   description = "Email address for CAA iodef record"
-  default     = "team@wombacher.it"
+  default     = "dominik@wombacher.cc"
 }
 
 # Domain extra data

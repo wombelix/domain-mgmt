@@ -2,54 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-resource "inwx_nameserver_record" "mycloudoffice_de_a_dns1" {
-  domain  = "mycloudoffice.de"
-  name    = "dns1.mycloudoffice.de"
-  type    = "A"
-  content = "192.174.68.104"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "mycloudoffice_de_aaaa_dns1" {
-  domain  = "mycloudoffice.de"
-  name    = "dns1.mycloudoffice.de"
-  type    = "AAAA"
-  content = "2001:67c:1bc::104"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "mycloudoffice_de_a_dns2" {
-  domain  = "mycloudoffice.de"
-  name    = "dns2.mycloudoffice.de"
-  type    = "A"
-  content = "176.97.158.104"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "mycloudoffice_de_aaaa_dns2" {
-  domain  = "mycloudoffice.de"
-  name    = "dns2.mycloudoffice.de"
-  type    = "AAAA"
-  content = "2001:67c:10b8::104"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "mycloudoffice_de_a_dns3" {
-  domain  = "mycloudoffice.de"
-  name    = "dns3.mycloudoffice.de"
-  type    = "A"
-  content = "45.87.158.53"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "mycloudoffice_de_aaaa_dns3" {
-  domain  = "mycloudoffice.de"
-  name    = "dns3.mycloudoffice.de"
-  type    = "AAAA"
-  content = "2a02:d500::53"
-  ttl     = 3600
-}
-
 resource "inwx_nameserver_record" "mycloudoffice_de_cname_autoconfig" {
   domain  = "mycloudoffice.de"
   name    = "autoconfig.mycloudoffice.de"
