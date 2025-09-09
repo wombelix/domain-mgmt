@@ -78,7 +78,7 @@ resource "inwx_nameserver_record" "xlii_cc_txt_spf" {
   domain  = "xlii.cc"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 include:www348.your-server.de mx ~all"
+  content = "v=spf1 mx ~all"
 }
 
 resource "inwx_nameserver_record" "xlii_cc_txt_dkim" {

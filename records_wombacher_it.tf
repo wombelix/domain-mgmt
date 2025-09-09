@@ -143,7 +143,7 @@ resource "inwx_nameserver_record" "wombacher_it_txt_spf" {
   domain  = "wombacher.it"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 include:www348.your-server.de mx ~all"
+  content = "v=spf1 mx ~all"
 }
 
 resource "inwx_nameserver_record" "wombacher_it_txt_dkim" {
