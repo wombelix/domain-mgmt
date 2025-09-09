@@ -92,7 +92,7 @@ resource "inwx_nameserver_record" "xlii_cc_txt_dmarc" {
   domain  = "xlii.cc"
   name    = "_dmarc.xlii.cc"
   type    = "TXT"
-  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.cc; ruf=mailto:postmaster@wombacher.cc; rf=afrf; sp=none; fo=1; ri=86400; adkim=r; aspf=r"
+  content = "v=DMARC1; p=none; rua=mailto:postmaster@xlii.cc; ruf=mailto:postmaster@xlii.cc; rf=afrf; sp=none; fo=1; ri=86400; adkim=r; aspf=r"
 }
 
 # SRV Records
