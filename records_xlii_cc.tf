@@ -78,7 +78,7 @@ resource "inwx_nameserver_record" "xlii_cc_txt_spf" {
   domain  = "xlii.cc"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 +a +mx ?all"
+  content = "v=spf1 include:www348.your-server.de mx ~all"
 }
 
 resource "inwx_nameserver_record" "xlii_cc_txt_dkim" {
@@ -86,6 +86,13 @@ resource "inwx_nameserver_record" "xlii_cc_txt_dkim" {
   name    = "default2509._domainkey.xlii.cc"
   type    = "TXT"
   content = "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5+obsOKO4tdJwua7STmSOmKcL9eO7MIJxpB13ph7GIyU9vNJgE+vijMQpysNMsrGWtFu10lLw/Xc7OVqa4qPx3iTtTdZeDrM7mNlWqj8AErltLcaoxGoBAAveHsuBgbmwx9v//Jf7Yk7Oh1kpYqjbPTesLpeYgqVcQZu96GV9Egpw9HOWzKkM21sQ9+JEJowDx9jG9hqza8GyG6NVlaIyxFNrLIorb7yhq9wGPNEjXE+n980CnzMBtlE9BNIY7bixGY47fV3PJZJH2K3Z0C/or3NNgZrOqMf4MVSLtBSncuaoWeWvp7oDxEF6+WRnH70aM/jmA40qVc1NHDPg4ElPQIDAQAB"
+}
+
+resource "inwx_nameserver_record" "xlii_cc_txt_dmarc" {
+  domain  = "xlii.cc"
+  name    = "_dmarc.xlii.cc"
+  type    = "TXT"
+  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.cc; ruf=mailto:postmaster@wombacher.cc; rf=afrf; sp=none; fo=1; ri=86400; adkim=r; aspf=r"
 }
 
 # SRV Records

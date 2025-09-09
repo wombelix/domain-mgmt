@@ -70,7 +70,7 @@ resource "inwx_nameserver_record" "wombacher_dev_txt_spf" {
   domain  = "wombacher.dev"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 +a +mx ?all"
+  content = "v=spf1 include:www348.your-server.de mx ~all"
 }
 
 resource "inwx_nameserver_record" "wombacher_dev_txt_dkim" {
@@ -78,6 +78,13 @@ resource "inwx_nameserver_record" "wombacher_dev_txt_dkim" {
   name    = "default2509._domainkey.wombacher.dev"
   type    = "TXT"
   content = "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2ik+eA7a35C6sUZy4OT97gMxUY4SdsAEjGm6pl30KnK6au4oWq2s20homnhu9Kpo/IO41xZ6meIsfLXIB6fv4BZjNp/qXDDXCGJ6MoBdaHlnCTuWcgd5DvV8RtpMoj+3UbtLK/hgwbtrGoD/t5DGVv3b4yBimI++wXJjJntO5GahvA84kds8qKA2gXrewMljfvBIozH3bTR4ML338AkcqStfI08nq6gKy8V6/XoSWtdiIdsCfsRo0COoHpoTdzCX2xtnZfGUK//W1RT6BuXvqDofxz2NCKn7ufzj6GC/DOapUxHTkMy0P6L3Q/gw7RKPIISs1dL1PJ0u5EmrFvrB3wIDAQAB"
+}
+
+resource "inwx_nameserver_record" "wombacher_dev_txt_dmarc" {
+  domain  = "wombacher.dev"
+  name    = "_dmarc.wombacher.dev"
+  type    = "TXT"
+  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.cc; ruf=mailto:postmaster@wombacher.cc; rf=afrf; sp=none; fo=1; ri=86400; adkim=r; aspf=r"
 }
 
 # SRV Records
