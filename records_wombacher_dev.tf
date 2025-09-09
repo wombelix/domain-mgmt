@@ -85,26 +85,26 @@ resource "inwx_nameserver_record" "wombacher_dev_srv_autodiscover" {
   domain  = "wombacher.dev"
   name    = "_autodiscover._tcp.wombacher.dev"
   type    = "SRV"
-  content = "0 100 443 mail.your-server.de"
+  content = "100 443 mail.your-server.de"
 }
 
 resource "inwx_nameserver_record" "wombacher_dev_srv_imaps" {
   domain  = "wombacher.dev"
   name    = "_imaps._tcp.wombacher.dev"
   type    = "SRV"
-  content = "0 100 993 mail.your-server.de"
+  content = "100 993 mail.your-server.de"
 }
 
 resource "inwx_nameserver_record" "wombacher_dev_srv_pop3s" {
   domain  = "wombacher.dev"
   name    = "_pop3s._tcp.wombacher.dev"
   type    = "SRV"
-  content = "0 100 995 mail.your-server.de"
+  content = "100 995 mail.your-server.de"
 }
 
 resource "inwx_nameserver_record" "wombacher_dev_srv_submission" {
   domain  = "wombacher.dev"
   name    = "_submission._tcp.wombacher.dev"
   type    = "SRV"
-  content = "0 100 587 mail.your-server.de"
+  content = "100 587 mail.your-server.de"
 }
