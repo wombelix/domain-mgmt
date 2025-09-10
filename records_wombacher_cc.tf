@@ -169,6 +169,6 @@ resource "inwx_nameserver_record" "wombacher_cc_txt__dmarc" {
   domain  = "wombacher.cc"
   name    = "_dmarc.wombacher.cc"
   type    = "TXT"
-  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.cc; rf=afrf; sp=none; fo=1; ri=86400; adkim=r; aspf=r"
+  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.cc; ruf=mailto:postmaster@wombacher.cc; rf=afrf; sp=none; pct=100; fo=1; ri=86400; adkim=r; aspf=r"
   ttl     = 3600
 }

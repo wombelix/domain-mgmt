@@ -157,7 +157,7 @@ resource "inwx_nameserver_record" "wombacher_it_txt_dmarc" {
   domain  = "wombacher.it"
   name    = "_dmarc.wombacher.it"
   type    = "TXT"
-  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.it; ruf=mailto:postmaster@wombacher.it; rf=afrf; sp=none; fo=1; ri=86400; adkim=r; aspf=r"
+  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.it; ruf=mailto:postmaster@wombacher.it; rf=afrf; sp=none; pct=100; fo=1; ri=86400; adkim=r; aspf=r"
 }
 
 # SRV Records
