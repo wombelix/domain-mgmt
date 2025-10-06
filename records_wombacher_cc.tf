@@ -7,7 +7,7 @@ resource "inwx_nameserver_record" "wombacher_cc_a_dominik" {
   name    = "dominik.wombacher.cc"
   type    = "A"
   content = "78.46.211.229"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_cc_a_1" {
@@ -15,7 +15,7 @@ resource "inwx_nameserver_record" "wombacher_cc_a_1" {
   name    = ""
   type    = "A"
   content = "78.46.211.229"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_cc_aaaa_dominik" {
@@ -23,7 +23,7 @@ resource "inwx_nameserver_record" "wombacher_cc_aaaa_dominik" {
   name    = "dominik.wombacher.cc"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
@@ -31,46 +31,14 @@ resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
   name    = ""
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_cc_cname_autoconfig" {
   domain  = "wombacher.cc"
   name    = "autoconfig.wombacher.cc"
   type    = "CNAME"
-  content = "mailbox.org"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_cname_mbo0001_domainkey" {
-  domain  = "wombacher.cc"
-  name    = "mbo0001._domainkey.wombacher.cc"
-  type    = "CNAME"
-  content = "mbo0001._domainkey.mailbox.org"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_cname_mbo0002_domainkey" {
-  domain  = "wombacher.cc"
-  name    = "mbo0002._domainkey.wombacher.cc"
-  type    = "CNAME"
-  content = "mbo0002._domainkey.mailbox.org"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_cname_mbo0003_domainkey" {
-  domain  = "wombacher.cc"
-  name    = "mbo0003._domainkey.wombacher.cc"
-  type    = "CNAME"
-  content = "mbo0003._domainkey.mailbox.org"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_cname_mbo0004_domainkey" {
-  domain  = "wombacher.cc"
-  name    = "mbo0004._domainkey.wombacher.cc"
-  type    = "CNAME"
-  content = "mbo0004._domainkey.mailbox.org"
+  content = "mail.your-server.de"
   ttl     = 300
 }
 
@@ -87,33 +55,15 @@ resource "inwx_nameserver_record" "wombacher_cc_cname_www" {
   name    = "www.wombacher.cc"
   type    = "CNAME"
   content = "wombacher.cc"
-  ttl     = 300
+  ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_mx_1" {
+resource "inwx_nameserver_record" "wombacher_cc_mx_www348" {
   domain  = "wombacher.cc"
   name    = ""
   type    = "MX"
   prio    = 10
-  content = "mxext1.mailbox.org"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_mx_2" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "MX"
-  prio    = 10
-  content = "mxext2.mailbox.org"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_mx_3" {
-  domain  = "wombacher.cc"
-  name    = ""
-  type    = "MX"
-  prio    = 20
-  content = "mxext3.mailbox.org"
+  content = "www348.your-server.de"
   ttl     = 300
 }
 
@@ -121,7 +71,35 @@ resource "inwx_nameserver_record" "wombacher_cc_srv_autodiscover_tcp" {
   domain  = "wombacher.cc"
   name    = "_autodiscover._tcp.wombacher.cc"
   type    = "SRV"
-  content = "0 443 mailbox.org"
+  content = "100 443 mail.your-server.de"
+  prio    = 0
+  ttl     = 300
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_srv_imaps_tcp" {
+  domain  = "wombacher.cc"
+  name    = "_imaps._tcp.wombacher.cc"
+  type    = "SRV"
+  content = "100 993 mail.your-server.de"
+  prio    = 0
+  ttl     = 300
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_srv_pop3s_tcp" {
+  domain  = "wombacher.cc"
+  name    = "_pop3s._tcp.wombacher.cc"
+  type    = "SRV"
+  content = "100 995 mail.your-server.de"
+  prio    = 0
+  ttl     = 300
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_srv_submission_tcp" {
+  domain  = "wombacher.cc"
+  name    = "_submission._tcp.wombacher.cc"
+  type    = "SRV"
+  content = "100 587 mail.your-server.de"
+  prio    = 0
   ttl     = 300
 }
 
@@ -130,14 +108,14 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_1" {
   name    = "dominik.wombacher.cc"
   type    = "TXT"
   content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
   domain  = "wombacher.cc"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 a mx include:mailbox.org ~all"
+  content = "v=spf1 a mx ~all"
   ttl     = 300
 }
 
@@ -146,7 +124,7 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_3" {
   name    = ""
   type    = "TXT"
   content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_cc_txt__dmarc" {
