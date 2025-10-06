@@ -141,27 +141,11 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_f4f894d6eeb9f9315ceb308f42f3
   ttl     = 300
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_txt_mailjet_425559c6" {
-  domain  = "wombacher.cc"
-  name    = "mailjet._425559c6.wombacher.cc"
-  type    = "TXT"
-  content = "425559c6298b631dfe8d0e47a7a684a0"
-  ttl     = 300
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_txt_mailjet_domainkey" {
-  domain  = "wombacher.cc"
-  name    = "mailjet._domainkey.wombacher.cc"
-  type    = "TXT"
-  content = "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC40wUCqgQc9MbZxeNupBo1up/TE+2yHL+7HKbigVcwuDeqbYcD4Ai5FeFU0y9OFVyda7nVtm7BIfDEpyezKsBvv0bzeq+ng4Xl8szw9k4flcE3OC3erwSJnfGtnbAJNX3vRUddoDFc2+oUbI36cjgqENS/MuEq59qMq4s3mFaxawIDAQAB"
-  ttl     = 300
-}
-
 resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
   domain  = "wombacher.cc"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 a mx include:spf.mailjet.com include:mailbox.org ~all"
+  content = "v=spf1 a mx include:mailbox.org ~all"
   ttl     = 300
 }
 
