@@ -74,6 +74,14 @@ resource "inwx_nameserver_record" "wombacher_cc_cname_mbo0004_domainkey" {
   ttl     = 300
 }
 
+resource "inwx_nameserver_record" "wombacher_cc_txt_default2501_domainkey" {
+  domain  = "wombacher.cc"
+  name    = "default2501._domainkey.wombacher.cc"
+  type    = "TXT"
+  content = "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArExTtKHVZGJJ4S11LJmeDU6AWY9z5At9yThjzIz9mBORUIrZ/OztUoTmN6T+STMaQ/mVmP3qUpwUcnBv5LE+OezW8ec7EsQOZ0AvNuHNKQerRLXbLlzjNeoCCUY1QR9k165PNFi/paL31n7vIs6mS+prBmBOrQY3rk6jrY/SXF3qfFaT8jQ5UFZR5nbDcKPTFOGPAQn7fzTTr8pGwC/48COUt1rJdwSsIUewVpxNODsLhZLELs623oSHFh5JZzo+4fJo1w8Yc8XRgZns8KcfAk+KuetxSR23jdA6sd6NorXycdfC5ELFMFIzNyZjOXSkC/4uNfwAqXvgkMkZmuHBrwIDAQAB"
+  ttl     = 300
+}
+
 resource "inwx_nameserver_record" "wombacher_cc_cname_www" {
   domain  = "wombacher.cc"
   name    = "www.wombacher.cc"
@@ -153,7 +161,7 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
   domain  = "wombacher.cc"
   name    = ""
   type    = "TXT"
-  content = "v=spf1 include:spf.mailjet.com include:mailbox.org mx ~all"
+  content = "v=spf1 a mx include:spf.mailjet.com include:mailbox.org ~all"
   ttl     = 300
 }
 
