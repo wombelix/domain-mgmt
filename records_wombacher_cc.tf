@@ -133,14 +133,6 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_1" {
   ttl     = 300
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_txt_f4f894d6eeb9f9315ceb308f42f30aaee5e042f5" {
-  domain  = "wombacher.cc"
-  name    = "f4f894d6eeb9f9315ceb308f42f30aaee5e042f5.wombacher.cc"
-  type    = "TXT"
-  content = "9690e661754e8389ce6de8fe279c388c43d9654e"
-  ttl     = 300
-}
-
 resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
   domain  = "wombacher.cc"
   name    = ""
