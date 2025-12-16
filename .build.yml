@@ -65,7 +65,7 @@ tasks:
 
       cd domain-mgmt/
 
-      tofu init -input=false
+      tofu init -upgrade -input=false
 
   - plan: |
       set +x
