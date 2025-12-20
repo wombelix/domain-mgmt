@@ -5,7 +5,7 @@
 # A Records
 resource "inwx_nameserver_record" "wombacher_dev_a_root" {
   domain  = "wombacher.dev"
-  name    = ""
+  name    = "wombacher.dev"
   type    = "A"
   content = "78.46.211.229"
 }
@@ -28,7 +28,7 @@ resource "inwx_nameserver_record" "wombacher_dev_a_wildcard" {
 # AAAA Records
 resource "inwx_nameserver_record" "wombacher_dev_aaaa_root" {
   domain  = "wombacher.dev"
-  name    = ""
+  name    = "wombacher.dev"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
 }
@@ -51,7 +51,7 @@ resource "inwx_nameserver_record" "wombacher_dev_aaaa_wildcard" {
 # MX Records
 resource "inwx_nameserver_record" "wombacher_dev_mx_1" {
   domain  = "wombacher.dev"
-  name    = ""
+  name    = "wombacher.dev"
   type    = "MX"
   prio    = 10
   content = "www348.your-server.de"
@@ -68,7 +68,7 @@ resource "inwx_nameserver_record" "wombacher_dev_cname_autoconfig" {
 # TXT Records
 resource "inwx_nameserver_record" "wombacher_dev_txt_spf" {
   domain  = "wombacher.dev"
-  name    = ""
+  name    = "wombacher.dev"
   type    = "TXT"
   content = "v=spf1 mx ~all"
 }

@@ -12,7 +12,7 @@ resource "inwx_nameserver_record" "wombacher_cc_a_dominik" {
 
 resource "inwx_nameserver_record" "wombacher_cc_a_1" {
   domain  = "wombacher.cc"
-  name    = ""
+  name    = "wombacher.cc"
   type    = "A"
   content = "78.46.211.229"
   ttl     = 3600
@@ -28,7 +28,7 @@ resource "inwx_nameserver_record" "wombacher_cc_aaaa_dominik" {
 
 resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
   domain  = "wombacher.cc"
-  name    = ""
+  name    = "wombacher.cc"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
   ttl     = 3600
@@ -60,7 +60,7 @@ resource "inwx_nameserver_record" "wombacher_cc_cname_www" {
 
 resource "inwx_nameserver_record" "wombacher_cc_mx_www348" {
   domain  = "wombacher.cc"
-  name    = ""
+  name    = "wombacher.cc"
   type    = "MX"
   prio    = 10
   content = "www348.your-server.de"
@@ -113,7 +113,7 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_1" {
 
 resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
   domain  = "wombacher.cc"
-  name    = ""
+  name    = "wombacher.cc"
   type    = "TXT"
   content = "v=spf1 a mx ~all"
   ttl     = 3600
@@ -121,7 +121,7 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
 
 resource "inwx_nameserver_record" "wombacher_cc_txt_3" {
   domain  = "wombacher.cc"
-  name    = ""
+  name    = "wombacher.cc"
   type    = "TXT"
   content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E"
   ttl     = 3600

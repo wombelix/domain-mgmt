@@ -14,16 +14,19 @@ resource "inwx_nameserver" "tld" {
 # inwx nameserver records
 resource "inwx_nameserver_record" "tld_caa_issue" {
   domain  = inwx_nameserver.tld.domain # Records depend on nameserver resource
+  name    = inwx_nameserver.tld.domain
   type    = "CAA"
   content = "0 issue \"letsencrypt.org\""
 }
 resource "inwx_nameserver_record" "tld_caa_issuewild" {
   domain  = inwx_nameserver.tld.domain # Records depend on nameserver resource
+  name    = inwx_nameserver.tld.domain
   type    = "CAA"
   content = "0 issuewild \"letsencrypt.org\""
 }
 resource "inwx_nameserver_record" "tld_caa_iodef" {
   domain  = inwx_nameserver.tld.domain # Records depend on nameserver resource
+  name    = inwx_nameserver.tld.domain
   type    = "CAA"
   content = "0 iodef \"mailto:${var.caa_iodef_mailto}\""
 }

@@ -5,7 +5,7 @@
 # A Records
 resource "inwx_nameserver_record" "xlii_cc_a_root" {
   domain  = "xlii.cc"
-  name    = ""
+  name    = "xlii.cc"
   type    = "A"
   content = "78.46.211.229"
 }
@@ -42,7 +42,7 @@ resource "inwx_nameserver_record" "xlii_cc_a_wildcard" {
 # AAAA Records
 resource "inwx_nameserver_record" "xlii_cc_aaaa_root" {
   domain  = "xlii.cc"
-  name    = ""
+  name    = "xlii.cc"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
 }
@@ -79,7 +79,7 @@ resource "inwx_nameserver_record" "xlii_cc_aaaa_wildcard" {
 # MX Records
 resource "inwx_nameserver_record" "xlii_cc_mx_1" {
   domain  = "xlii.cc"
-  name    = ""
+  name    = "xlii.cc"
   type    = "MX"
   prio    = 10
   content = "www348.your-server.de"
@@ -104,7 +104,7 @@ resource "inwx_nameserver_record" "xlii_cc_cname_hub" {
 # TXT Records
 resource "inwx_nameserver_record" "xlii_cc_txt_spf" {
   domain  = "xlii.cc"
-  name    = ""
+  name    = "xlii.cc"
   type    = "TXT"
   content = "v=spf1 mx ~all"
 }

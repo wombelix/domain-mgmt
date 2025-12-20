@@ -53,7 +53,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_ns3" {
 # Authoritative NS Records
 resource "inwx_nameserver_record" "wombacher_it_ns_1" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "NS"
   content = "ns1.wombacher.it"
   ttl     = 86400
@@ -61,7 +61,7 @@ resource "inwx_nameserver_record" "wombacher_it_ns_1" {
 
 resource "inwx_nameserver_record" "wombacher_it_ns_2" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "NS"
   content = "ns2.wombacher.it"
   ttl     = 86400
@@ -69,7 +69,7 @@ resource "inwx_nameserver_record" "wombacher_it_ns_2" {
 
 resource "inwx_nameserver_record" "wombacher_it_ns_3" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "NS"
   content = "ns3.wombacher.it"
   ttl     = 86400
@@ -78,7 +78,7 @@ resource "inwx_nameserver_record" "wombacher_it_ns_3" {
 # A Records
 resource "inwx_nameserver_record" "wombacher_it_a_root" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "A"
   content = "78.46.211.229"
 }
@@ -101,7 +101,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_wildcard" {
 # AAAA Records
 resource "inwx_nameserver_record" "wombacher_it_aaaa_root" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
 }
@@ -124,7 +124,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_wildcard" {
 # MX Records
 resource "inwx_nameserver_record" "wombacher_it_mx_1" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "MX"
   prio    = 10
   content = "www348.your-server.de"
@@ -141,7 +141,7 @@ resource "inwx_nameserver_record" "wombacher_it_cname_autoconfig" {
 # TXT Records
 resource "inwx_nameserver_record" "wombacher_it_txt_spf" {
   domain  = "wombacher.it"
-  name    = ""
+  name    = "wombacher.it"
   type    = "TXT"
   content = "v=spf1 mx ~all"
 }
