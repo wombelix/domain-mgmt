@@ -24,6 +24,13 @@ resource "inwx_nameserver_record" "xlii_cc_a_beastie" {
   content = "212.227.100.212"
 }
 
+resource "inwx_nameserver_record" "xlii_cc_a_geeko" {
+  domain  = "xlii.cc"
+  name    = "geeko.xlii.cc"
+  type    = "A"
+  content = "91.99.69.228"
+}
+
 # Wildcard A record
 resource "inwx_nameserver_record" "xlii_cc_a_wildcard" {
   domain  = "xlii.cc"
@@ -52,6 +59,13 @@ resource "inwx_nameserver_record" "xlii_cc_aaaa_beastie" {
   name    = "beastie.xlii.cc"
   type    = "AAAA"
   content = "2a01:239:24d:600::1"
+}
+
+resource "inwx_nameserver_record" "xlii_cc_aaaa_geeko" {
+  domain  = "xlii.cc"
+  name    = "geeko.xlii.cc"
+  type    = "AAAA"
+  content = "2a01:4f8:1c1c:d2bd::1"
 }
 
 # Wildcard AAAA record
