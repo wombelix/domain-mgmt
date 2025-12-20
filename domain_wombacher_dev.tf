@@ -8,5 +8,8 @@ module "wombacher_dev" {
   extra_data = {
     "ACKNOWLEDGE-SECURE-ONLY-DEV" = "1"
   }
-
+  # .dev domain doesn't seem to have admin and billig contact anymore
+  # set to 0 to avoid constant changes on apply
+  contacts_admin   = "0"
+  contacts_billing = "0"
 }

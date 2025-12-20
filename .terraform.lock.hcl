@@ -6,6 +6,7 @@ provider "registry.opentofu.org/inwx/inwx" {
   constraints = "1.6.3"
   hashes = [
     "h1:ZtnYfbL1yMWS1a68ifyZMF16ekI4TvUVAhIhLoKRdSA=",
+    "h1:yCwJvxCAs86lQzkwM6lgIJHkkUDEqQkPvnD/eMC7+vo=",
     "zh:11608310d49f32e06f6df6e3bf68f222f88dbb3354c9457390d982d4f416f32d",
     "zh:2944a3552578950bb316bba02fce8e0e98ae2d132ca6d2c09d68a0fbf14739cc",
     "zh:294a170c394b3cbfe62f3b94d27ac7061d5d5b96104c64333a3c5212b7ac1ce4",
