@@ -39,6 +39,13 @@ resource "inwx_nameserver_record" "xlii_cc_a_wildcard" {
   content = "78.46.211.229"
 }
 
+resource "inwx_nameserver_record" "xlii_cc_a_wildcard_apps_geeko" {
+  domain  = "xlii.cc"
+  name    = "*.apps.geeko.xlii.cc"
+  type    = "A"
+  content = "91.99.69.228"
+}
+
 # AAAA Records
 resource "inwx_nameserver_record" "xlii_cc_aaaa_root" {
   domain  = "xlii.cc"
@@ -74,6 +81,13 @@ resource "inwx_nameserver_record" "xlii_cc_aaaa_wildcard" {
   name    = "*.xlii.cc"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
+}
+
+resource "inwx_nameserver_record" "xlii_cc_aaaa_wildcard_apps_geeko" {
+  domain  = "xlii.cc"
+  name    = "*.apps.geeko.xlii.cc"
+  type    = "AAAA"
+  content = "2a01:4f8:1c1c:d2bd::1"
 }
 
 # MX Records
