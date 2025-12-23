@@ -192,27 +192,3 @@ resource "inwx_nameserver_record" "wombacher_it_srv_submission" {
   content = "100 587 mail.your-server.de"
   prio    = 0
 }
-
-# fwd.wombacher.it - MX for subdomain
-resource "inwx_nameserver_record" "fwd_wombacher_it_mx_1" {
-  domain  = "wombacher.it"
-  name    = "fwd.wombacher.it"
-  type    = "MX"
-  prio    = 10
-  content = "mx1.improvmx.com"
-}
-
-resource "inwx_nameserver_record" "fwd_wombacher_it_mx_2" {
-  domain  = "wombacher.it"
-  name    = "fwd.wombacher.it"
-  type    = "MX"
-  prio    = 20
-  content = "mx2.improvmx.com"
-}
-
-resource "inwx_nameserver_record" "fwd_wombacher_it_txt_1" {
-  domain  = "wombacher.it"
-  name    = "fwd.wombacher.it"
-  type    = "TXT"
-  content = "v=spf1 include:spf.improvmx.com ~all"
-}
