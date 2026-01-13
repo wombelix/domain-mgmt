@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 terraform {
-  required_version = ">= 1.8"
+  required_version = ">= 1.11"
   encryption {
     key_provider "aws_kms" "dominik-wombacher" {
       kms_key_id = "arn:${var.aws_partition}:kms:${var.aws_region}:${var.aws_account_id}:key/${var.aws_kms_name}"

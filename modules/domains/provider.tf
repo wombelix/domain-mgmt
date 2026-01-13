@@ -3,11 +3,11 @@
 # SPDX-License-Identifier: Apache-2.0
 
 terraform {
-  required_version = ">= 1.8"
+  required_version = ">= 1.11"
   required_providers {
     inwx = {
       source  = "inwx/inwx"
-      version = "1.6.3"
+      version = "1.6.4"
     }
   }
 }
