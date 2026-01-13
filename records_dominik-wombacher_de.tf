@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-FileCopyrightText: 2026 Dominik Wombacher <dominik@wombacher.cc>
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 
 resource "inwx_nameserver_record" "dominik_wombacher_de_url_apex" {
   domain            = "dominik-wombacher.de"
