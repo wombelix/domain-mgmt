@@ -6,7 +6,7 @@ region: eu-central-1
 replica: eu-west-1
 kms: alias/backend-encryption
 upper: true
-#format: github-env
+format: github-env
 params:
   - name: /secrets/inwx_username
   - name: /secrets/inwx_password
