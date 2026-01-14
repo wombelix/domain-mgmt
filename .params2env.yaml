@@ -8,5 +8,5 @@ kms: alias/backend-encryption
 upper: true
 format: github-env
 params:
-  - name: /secrets/inwx_username
-  - name: /secrets/inwx_password
+  - name: /projects/domain-mgmt/inwx_username
+  - name: /projects/domain-mgmt/inwx_password
