@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-module "mycloudoffice_de" {
+module "opensourcewerk_com" {
   source      = "./modules/domains"
-  domain_name = "mycloudoffice.de"
+  domain_name = "opensourcewerk.com"
 }
