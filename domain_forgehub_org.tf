@@ -5,4 +5,8 @@
 module "forgehub_org" {
   source      = "./modules/domains"
   domain_name = "forgehub.org"
+  # .org domain doesn't seem to have admin and billig contact anymore
+  # set to 0 to avoid constant changes on apply
+  contacts_admin   = "0"
+  contacts_billing = "0"
 }
