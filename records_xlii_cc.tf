@@ -24,9 +24,9 @@ resource "inwx_nameserver_record" "xlii_cc_a_beastie" {
   content = "212.227.100.212"
 }
 
-resource "inwx_nameserver_record" "xlii_cc_a_geeko" {
+resource "inwx_nameserver_record" "xlii_cc_a_k3s" {
   domain  = "xlii.cc"
-  name    = "geeko.xlii.cc"
+  name    = "k3s.xlii.cc"
   type    = "A"
   content = "91.99.69.228"
 }
@@ -39,9 +39,9 @@ resource "inwx_nameserver_record" "xlii_cc_a_wildcard" {
   content = "78.46.211.229"
 }
 
-resource "inwx_nameserver_record" "xlii_cc_a_wildcard_apps_geeko" {
+resource "inwx_nameserver_record" "xlii_cc_a_wildcard_apps_k3s" {
   domain  = "xlii.cc"
-  name    = "*.apps.geeko.xlii.cc"
+  name    = "*.apps.k3s.xlii.cc"
   type    = "A"
   content = "91.99.69.228"
 }
@@ -68,9 +68,9 @@ resource "inwx_nameserver_record" "xlii_cc_aaaa_beastie" {
   content = "2a01:239:24d:600::1"
 }
 
-resource "inwx_nameserver_record" "xlii_cc_aaaa_geeko" {
+resource "inwx_nameserver_record" "xlii_cc_aaaa_k3s" {
   domain  = "xlii.cc"
-  name    = "geeko.xlii.cc"
+  name    = "k3s.xlii.cc"
   type    = "AAAA"
   content = "2a01:4f8:1c1c:d2bd::1"
 }
@@ -83,9 +83,9 @@ resource "inwx_nameserver_record" "xlii_cc_aaaa_wildcard" {
   content = "2a01:4f8:d0a:5287::2"
 }
 
-resource "inwx_nameserver_record" "xlii_cc_aaaa_wildcard_apps_geeko" {
+resource "inwx_nameserver_record" "xlii_cc_aaaa_wildcard_apps_k3s" {
   domain  = "xlii.cc"
-  name    = "*.apps.geeko.xlii.cc"
+  name    = "*.apps.k3s.xlii.cc"
   type    = "AAAA"
   content = "2a01:4f8:1c1c:d2bd::1"
 }
