@@ -12,6 +12,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_ns1" {
   name    = "ns1.wombacher.it"
   type    = "A"
   content = "192.174.68.104"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_a_ns2" {
@@ -19,6 +20,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_ns2" {
   name    = "ns2.wombacher.it"
   type    = "A"
   content = "176.97.158.104"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_a_ns3" {
@@ -26,6 +28,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_ns3" {
   name    = "ns3.wombacher.it"
   type    = "A"
   content = "45.87.158.53"
+  ttl     = 3600
 }
 
 # NS Glue AAAA Records
@@ -34,6 +37,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_ns1" {
   name    = "ns1.wombacher.it"
   type    = "AAAA"
   content = "2001:67c:1bc::104"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_aaaa_ns2" {
@@ -41,6 +45,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_ns2" {
   name    = "ns2.wombacher.it"
   type    = "AAAA"
   content = "2001:67c:10b8::104"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_aaaa_ns3" {
@@ -48,6 +53,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_ns3" {
   name    = "ns3.wombacher.it"
   type    = "AAAA"
   content = "2a02:d500::53"
+  ttl     = 3600
 }
 
 # Authoritative NS Records
@@ -81,6 +87,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_root" {
   name    = "wombacher.it"
   type    = "A"
   content = "78.46.211.229"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_a_www" {
@@ -88,6 +95,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_www" {
   name    = "www.wombacher.it"
   type    = "A"
   content = "78.46.211.229"
+  ttl     = 3600
 }
 
 # Wildcard A Record
@@ -96,6 +104,7 @@ resource "inwx_nameserver_record" "wombacher_it_a_wildcard" {
   name    = "*.wombacher.it"
   type    = "A"
   content = "78.46.211.229"
+  ttl     = 3600
 }
 
 # AAAA Records
@@ -104,6 +113,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_root" {
   name    = "wombacher.it"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_aaaa_www" {
@@ -111,6 +121,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_www" {
   name    = "www.wombacher.it"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
+  ttl     = 3600
 }
 
 # Wildcard AAAA Record
@@ -119,6 +130,7 @@ resource "inwx_nameserver_record" "wombacher_it_aaaa_wildcard" {
   name    = "*.wombacher.it"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
+  ttl     = 3600
 }
 
 # MX Records
@@ -128,6 +140,7 @@ resource "inwx_nameserver_record" "wombacher_it_mx_1" {
   type    = "MX"
   prio    = 10
   content = "www348.your-server.de"
+  ttl     = 3600
 }
 
 # CNAME Records
@@ -136,6 +149,7 @@ resource "inwx_nameserver_record" "wombacher_it_cname_autoconfig" {
   name    = "autoconfig.wombacher.it"
   type    = "CNAME"
   content = "mail.your-server.de"
+  ttl     = 3600
 }
 
 # TXT Records
@@ -144,6 +158,7 @@ resource "inwx_nameserver_record" "wombacher_it_txt_spf" {
   name    = "wombacher.it"
   type    = "TXT"
   content = "v=spf1 mx ~all"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_txt_dkim" {
@@ -151,13 +166,15 @@ resource "inwx_nameserver_record" "wombacher_it_txt_dkim" {
   name    = "default2307._domainkey.wombacher.it"
   type    = "TXT"
   content = "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz6OeTNkmbhgowOvZU9xb+vEsjsA+2Fr7Bce/GCu51KdUDtdKgMBRZW8F5i3EAHhVOD90M1GEBq129kCONMMgLpjRsL1Co5eNOQAq97zHhAJHj9prxLB1D/0EyH1A/R8j5MikHi2jd0MvaYY34k5ocNswQ/yPjqnRMQRmXw0IucXnMKIn656PECziJldI9HfNMHiaR3bnDExWejZD8eWenRjQx/chBAWnn7uTXRMxXCHiSG70C+xUVD2MGD1+UDwIa7YXx2S8VaUnWFSZdpepwfayNBEK747qNLtesttJbDI1ci427dwvqNiXANC8hzBf0igPIWoRWQPtnS1dm6fpYQIDAQAB"
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_txt_dmarc" {
   domain  = "wombacher.it"
   name    = "_dmarc.wombacher.it"
   type    = "TXT"
-  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.it; ruf=mailto:postmaster@wombacher.it; rf=afrf; sp=none; pct=100; fo=1; ri=86400; adkim=r; aspf=r"
+  content = "v=DMARC1; p=none; sp=reject; rua=mailto:postmaster@wombacher.cc; adkim=r; aspf=r; pct=100"
+  ttl     = 3600
 }
 
 # SRV Records
@@ -167,6 +184,7 @@ resource "inwx_nameserver_record" "wombacher_it_srv_autodiscover" {
   type    = "SRV"
   content = "100 443 mail.your-server.de"
   prio    = 0
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_srv_imaps" {
@@ -175,6 +193,7 @@ resource "inwx_nameserver_record" "wombacher_it_srv_imaps" {
   type    = "SRV"
   content = "100 993 mail.your-server.de"
   prio    = 0
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_srv_pop3s" {
@@ -183,6 +202,7 @@ resource "inwx_nameserver_record" "wombacher_it_srv_pop3s" {
   type    = "SRV"
   content = "100 995 mail.your-server.de"
   prio    = 0
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "wombacher_it_srv_submission" {
@@ -191,4 +211,5 @@ resource "inwx_nameserver_record" "wombacher_it_srv_submission" {
   type    = "SRV"
   content = "100 587 mail.your-server.de"
   prio    = 0
+  ttl     = 3600
 }
