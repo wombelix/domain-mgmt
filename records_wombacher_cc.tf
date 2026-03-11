@@ -2,6 +2,23 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+# A Records
+resource "inwx_nameserver_record" "wombacher_cc_a_1" {
+  domain  = "wombacher.cc"
+  name    = "wombacher.cc"
+  type    = "A"
+  content = "78.46.211.229"
+  ttl     = 3600
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_a_www" {
+  domain  = "wombacher.cc"
+  name    = "www.wombacher.cc"
+  type    = "A"
+  content = "78.46.211.229"
+  ttl     = 3600
+}
+
 resource "inwx_nameserver_record" "wombacher_cc_a_dominik" {
   domain  = "wombacher.cc"
   name    = "dominik.wombacher.cc"
@@ -10,11 +27,29 @@ resource "inwx_nameserver_record" "wombacher_cc_a_dominik" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_a_1" {
+# Wildcard A record
+resource "inwx_nameserver_record" "wombacher_cc_a_wildcard" {
   domain  = "wombacher.cc"
-  name    = "wombacher.cc"
+  name    = "*.wombacher.cc"
   type    = "A"
   content = "78.46.211.229"
+  ttl     = 3600
+}
+
+# AAAA Records
+resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
+  domain  = "wombacher.cc"
+  name    = "wombacher.cc"
+  type    = "AAAA"
+  content = "2a01:4f8:d0a:5287::2"
+  ttl     = 3600
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_aaaa_www" {
+  domain  = "wombacher.cc"
+  name    = "www.wombacher.cc"
+  type    = "AAAA"
+  content = "2a01:4f8:d0a:5287::2"
   ttl     = 3600
 }
 
@@ -26,19 +61,64 @@ resource "inwx_nameserver_record" "wombacher_cc_aaaa_dominik" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
+# Wildcard AAAA record
+resource "inwx_nameserver_record" "wombacher_cc_aaaa_wildcard" {
   domain  = "wombacher.cc"
-  name    = "wombacher.cc"
+  name    = "*.wombacher.cc"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
   ttl     = 3600
 }
 
+# MX Records
+resource "inwx_nameserver_record" "wombacher_cc_mx_www348" {
+  domain  = "wombacher.cc"
+  name    = "wombacher.cc"
+  type    = "MX"
+  prio    = 10
+  content = "www348.your-server.de"
+  ttl     = 3600
+}
+
+# CNAME Records
 resource "inwx_nameserver_record" "wombacher_cc_cname_autoconfig" {
   domain  = "wombacher.cc"
   name    = "autoconfig.wombacher.cc"
   type    = "CNAME"
   content = "mail.your-server.de"
+  ttl     = 3600
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_cname_share" {
+  domain  = "wombacher.cc"
+  name    = "share.wombacher.cc"
+  type    = "CNAME"
+  content = "nx31812.your-storageshare.de"
+  ttl     = 3600
+}
+
+# TXT Records
+resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
+  domain  = "wombacher.cc"
+  name    = "wombacher.cc"
+  type    = "TXT"
+  content = "v=spf1 a mx ~all"
+  ttl     = 3600
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_txt_3" {
+  domain  = "wombacher.cc"
+  name    = "wombacher.cc"
+  type    = "TXT"
+  content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E" #gitleaks:allow
+  ttl     = 3600
+}
+
+resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_1" {
+  domain  = "wombacher.cc"
+  name    = "dominik.wombacher.cc"
+  type    = "TXT"
+  content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E" #gitleaks:allow
   ttl     = 3600
 }
 
@@ -50,23 +130,15 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_default2501_domainkey" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_cname_www" {
+resource "inwx_nameserver_record" "wombacher_cc_txt_dmarc" {
   domain  = "wombacher.cc"
-  name    = "www.wombacher.cc"
-  type    = "CNAME"
-  content = "wombacher.cc"
+  name    = "_dmarc.wombacher.cc"
+  type    = "TXT"
+  content = "v=DMARC1; p=none; sp=reject; rua=mailto:postmaster@wombacher.cc; adkim=r; aspf=r; pct=100"
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_mx_www348" {
-  domain  = "wombacher.cc"
-  name    = "wombacher.cc"
-  type    = "MX"
-  prio    = 10
-  content = "www348.your-server.de"
-  ttl     = 3600
-}
-
+# SRV Records
 resource "inwx_nameserver_record" "wombacher_cc_srv_autodiscover_tcp" {
   domain  = "wombacher.cc"
   name    = "_autodiscover._tcp.wombacher.cc"
@@ -100,37 +172,5 @@ resource "inwx_nameserver_record" "wombacher_cc_srv_submission_tcp" {
   type    = "SRV"
   content = "100 587 mail.your-server.de"
   prio    = 0
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_1" {
-  domain  = "wombacher.cc"
-  name    = "dominik.wombacher.cc"
-  type    = "TXT"
-  content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
-  domain  = "wombacher.cc"
-  name    = "wombacher.cc"
-  type    = "TXT"
-  content = "v=spf1 a mx ~all"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_txt_3" {
-  domain  = "wombacher.cc"
-  name    = "wombacher.cc"
-  type    = "TXT"
-  content = "aspe:keyoxide.org:CDKSMZK6K2WIQFSXRLHXVRIJ6E"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_cc_txt__dmarc" {
-  domain  = "wombacher.cc"
-  name    = "_dmarc.wombacher.cc"
-  type    = "TXT"
-  content = "v=DMARC1; p=none; rua=mailto:postmaster@wombacher.cc; ruf=mailto:postmaster@wombacher.cc; rf=afrf; sp=none; pct=100; fo=1; ri=86400; adkim=r; aspf=r"
   ttl     = 3600
 }
