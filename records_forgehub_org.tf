@@ -8,7 +8,7 @@ resource "inwx_nameserver_record" "forgehub_org_txt_spf" {
   name    = "forgehub.org"
   type    = "TXT"
   content = "v=spf1 -all"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "forgehub_org_txt_dmarc" {
@@ -16,5 +16,5 @@ resource "inwx_nameserver_record" "forgehub_org_txt_dmarc" {
   name    = "_dmarc.forgehub.org"
   type    = "TXT"
   content = "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; pct=100"
-  ttl     = 300
+  ttl     = 3600
 }
