@@ -17,7 +17,7 @@ resource "inwx_nameserver_record" "xlii_cc_txt_spf" {
   name    = "xlii.cc"
   type    = "TXT"
   content = "v=spf1 -all"
-  ttl     = 300
+  ttl     = 3600
 }
 
 resource "inwx_nameserver_record" "xlii_cc_txt_dmarc" {
@@ -25,5 +25,5 @@ resource "inwx_nameserver_record" "xlii_cc_txt_dmarc" {
   name    = "_dmarc.xlii.cc"
   type    = "TXT"
   content = "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; pct=100"
-  ttl     = 300
+  ttl     = 3600
 }
