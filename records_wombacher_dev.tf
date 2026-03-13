@@ -126,7 +126,7 @@ resource "inwx_nameserver_record" "wombacher_dev_txt_spf" {
   domain  = "wombacher.dev"
   name    = "wombacher.dev"
   type    = "TXT"
-  content = "v=spf1 mx ~all"
+  content = "v=spf1 mx -all"
   ttl     = 3600
 }
 
@@ -142,7 +142,7 @@ resource "inwx_nameserver_record" "wombacher_dev_txt_dmarc" {
   domain  = "wombacher.dev"
   name    = "_dmarc.wombacher.dev"
   type    = "TXT"
-  content = "v=DMARC1; p=none; sp=reject; rua=mailto:postmaster@wombacher.cc; adkim=r; aspf=r; pct=100"
+  content = "v=DMARC1; p=reject; sp=reject; rua=mailto:postmaster@wombacher.cc; adkim=r; aspf=r; pct=100"
   ttl     = 3600
 }
 
