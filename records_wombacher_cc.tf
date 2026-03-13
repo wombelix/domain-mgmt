@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # A Records
-resource "inwx_nameserver_record" "wombacher_cc_a_1" {
+resource "inwx_nameserver_record" "wombacher_cc_a_root" {
   domain  = "wombacher.cc"
   name    = "wombacher.cc"
   type    = "A"
@@ -37,7 +37,7 @@ resource "inwx_nameserver_record" "wombacher_cc_a_wildcard" {
 }
 
 # AAAA Records
-resource "inwx_nameserver_record" "wombacher_cc_aaaa_1" {
+resource "inwx_nameserver_record" "wombacher_cc_aaaa_root" {
   domain  = "wombacher.cc"
   name    = "wombacher.cc"
   type    = "AAAA"
@@ -71,7 +71,7 @@ resource "inwx_nameserver_record" "wombacher_cc_aaaa_wildcard" {
 }
 
 # MX Records
-resource "inwx_nameserver_record" "wombacher_cc_mx_www348" {
+resource "inwx_nameserver_record" "wombacher_cc_mx_1" {
   domain  = "wombacher.cc"
   name    = "wombacher.cc"
   type    = "MX"
@@ -98,15 +98,15 @@ resource "inwx_nameserver_record" "wombacher_cc_cname_share" {
 }
 
 # TXT Records
-resource "inwx_nameserver_record" "wombacher_cc_txt_2" {
+resource "inwx_nameserver_record" "wombacher_cc_txt_spf" {
   domain  = "wombacher.cc"
   name    = "wombacher.cc"
   type    = "TXT"
-  content = "v=spf1 a mx ~all"
-  ttl     = 3600
+  content = "v=spf1 a mx -all"
+  ttl     = 300
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_txt_3" {
+resource "inwx_nameserver_record" "wombacher_cc_txt_keyoxide" {
   domain  = "wombacher.cc"
   name    = "wombacher.cc"
   type    = "TXT"
@@ -114,7 +114,7 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_3" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_1" {
+resource "inwx_nameserver_record" "wombacher_cc_txt_dominik_keyoxide" {
   domain  = "wombacher.cc"
   name    = "dominik.wombacher.cc"
   type    = "TXT"
@@ -134,8 +134,8 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_dmarc" {
   domain  = "wombacher.cc"
   name    = "_dmarc.wombacher.cc"
   type    = "TXT"
-  content = "v=DMARC1; p=none; sp=reject; rua=mailto:postmaster@wombacher.cc; adkim=r; aspf=r; pct=100"
-  ttl     = 3600
+  content = "v=DMARC1; p=quarantine; sp=reject; rua=mailto:postmaster@wombacher.cc; adkim=r; aspf=r; pct=100"
+  ttl     = 300
 }
 
 # SRV Records
