@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 module "mycloudoffice_de" {
-  source      = "./modules/domains"
-  domain_name = "mycloudoffice.de"
+  source       = "./modules/domains"
+  domain_name  = "mycloudoffice.de"
+  renewal_mode = "AUTODELETE"
 }

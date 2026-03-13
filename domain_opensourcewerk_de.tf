@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 module "opensourcewerk_de" {
-  source      = "./modules/domains"
-  domain_name = "opensourcewerk.de"
+  source       = "./modules/domains"
+  domain_name  = "opensourcewerk.de"
+  renewal_mode = "AUTODELETE"
 }

@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 module "wartercolor_de" {
-  source      = "./modules/domains"
-  domain_name = "wartercolor.de"
+  source       = "./modules/domains"
+  domain_name  = "wartercolor.de"
+  renewal_mode = "AUTODELETE"
 }
