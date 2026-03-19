@@ -138,6 +138,14 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_dmarc" {
   ttl     = 300
 }
 
+resource "inwx_nameserver_record" "wombacher_cc_txt_openpgpkey" {
+  domain  = "wombacher.cc"
+  name    = "openpgpkey.wombacher.cc"
+  type    = "TXT"
+  content = ""
+  ttl     = 3600
+}
+
 # SRV Records
 resource "inwx_nameserver_record" "wombacher_cc_srv_autodiscover_tcp" {
   domain  = "wombacher.cc"
