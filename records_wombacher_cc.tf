@@ -142,7 +142,7 @@ resource "inwx_nameserver_record" "wombacher_cc_txt_openpgpkey" {
   domain  = "wombacher.cc"
   name    = "openpgpkey.wombacher.cc"
   type    = "TXT"
-  content = ""
+  content = " "
   ttl     = 3600
 }
 
