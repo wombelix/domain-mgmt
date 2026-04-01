@@ -27,28 +27,12 @@ resource "inwx_nameserver_record" "wombacher_dev_a_beastie" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_dev_a_k8s" {
-  domain  = "wombacher.dev"
-  name    = "k8s.wombacher.dev"
-  type    = "A"
-  content = "91.99.69.228"
-  ttl     = 3600
-}
-
 # Wildcard A record
 resource "inwx_nameserver_record" "wombacher_dev_a_wildcard" {
   domain  = "wombacher.dev"
   name    = "*.wombacher.dev"
   type    = "A"
   content = "78.46.211.229"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_dev_a_wildcard_apps_k8s" {
-  domain  = "wombacher.dev"
-  name    = "*.apps.k8s.wombacher.dev"
-  type    = "A"
-  content = "91.99.69.228"
   ttl     = 3600
 }
 
@@ -77,28 +61,12 @@ resource "inwx_nameserver_record" "wombacher_dev_aaaa_beastie" {
   ttl     = 3600
 }
 
-resource "inwx_nameserver_record" "wombacher_dev_aaaa_k8s" {
-  domain  = "wombacher.dev"
-  name    = "k8s.wombacher.dev"
-  type    = "AAAA"
-  content = "2a01:4f8:1c1c:d2bd::1"
-  ttl     = 3600
-}
-
 # Wildcard AAAA record
 resource "inwx_nameserver_record" "wombacher_dev_aaaa_wildcard" {
   domain  = "wombacher.dev"
   name    = "*.wombacher.dev"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
-  ttl     = 3600
-}
-
-resource "inwx_nameserver_record" "wombacher_dev_aaaa_wildcard_apps_k8s" {
-  domain  = "wombacher.dev"
-  name    = "*.apps.k8s.wombacher.dev"
-  type    = "AAAA"
-  content = "2a01:4f8:1c1c:d2bd::1"
   ttl     = 3600
 }
 
