@@ -9,8 +9,11 @@ SPDX-License-Identifier: Apache-2.0
 OpenTofu based management of my Domains on inwx.
 The majority of DNS records are handled outside this repo.
 
-[![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/domain-mgmt)](https://api.reuse.software/info/git.sr.ht/~wombelix/domain-mgmt)
-[![builds.sr.ht status](https://builds.sr.ht/~wombelix/domain-mgmt.svg)](https://builds.sr.ht/~wombelix/domain-mgmt?)
+<!-- markdownlint-disable MD013 -->
+[![REUSE status](https://api.reuse.software/badge/github.com/wombelix/domain-mgmt)](https://api.reuse.software/info/github.com/wombelix/domain-mgmt)
+[![Mirror](https://github.com/wombelix/domain-mgmt/actions/workflows/mirror.yml/badge.svg)](https://github.com/wombelix/domain-mgmt/actions/workflows/mirror.yml)
+[![Opentofu](https://github.com/wombelix/domain-mgmt/actions/workflows/opentofu.yml/badge.svg)](https://github.com/wombelix/domain-mgmt/actions/workflows/opentofu.yml)
+<!-- markdownlint-enable MD013 -->
 
 ## Table of Contents
 
@@ -24,7 +27,7 @@ The majority of DNS records are handled outside this repo.
 To interact with AWS (S3 Backend and KMS encryption) and inwx,
 the following Environment variables have to be set:
 
-```
+```text
 AWS_REGION
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
@@ -40,7 +43,7 @@ INWX_PASSWORD
 Variables with `TF_VAR_` prefix can also be defined
 in a `terraform.tfvars` file instead, for example:
 
-```
+```hcl
 project = "domain-mgmt"
 ```
 
@@ -51,25 +54,17 @@ To managed already existing domains, use
 ## Source
 
 The primary location is:
-[git.sr.ht/~wombelix/domain-mgmt](https://git.sr.ht/~wombelix/domain-mgmt)
+[github.com/wombelix/domain-mgmt](https://github.com/wombelix/domain-mgmt)
 
 Mirrors are available on
-[Codeberg](https://codeberg.org/wombelix/domain-mgmt),
-[Gitlab](https://gitlab.com/wombelix/domain-mgmt)
-and
-[GitHub](https://github.com/wombelix/domain-mgmt).
+[Codeberg](https://codeberg.org/wombelix/domain-mgmt) and
+[Gitlab](https://gitlab.com/wombelix/domain-mgmt).
 
 ## Contribute
 
-Please don't hesitate to provide feedback,
-open an issue, or create a Pull / Merge Request.
+Pick the platform you prefer and are most comfortable with.
 
-Just pick the workflow or platform you prefer and are most comfortable with.
-
-Feedback, bug reports, or patches sent to my sr.ht list
-[~wombelix/inbox@lists.sr.ht](https://lists.sr.ht/~wombelix/inbox) or via
-[Email and Instant Messaging](https://dominik.wombacher.cc/pages/contact.html)
-are also always welcome.
+Provide feedback, open an issue or create a pull / merge request.
 
 ## License
 
