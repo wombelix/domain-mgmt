@@ -13,17 +13,17 @@ repos:
             #exclude: '^cfn/.*'
         -   id: check-json
         -   id: check-added-large-files
-  -   repo: https://github.com/markdownlint/markdownlint
-      rev: v0.15.0
+  -   repo: https://github.com/DavidAnson/markdownlint-cli2
+      rev: v0.23.2
       hooks:
-        -   id: markdownlint_docker
+        -   id: markdownlint-cli2-docker
             #exclude: CHANGELOG.md
   -   repo: https://github.com/fsfe/reuse-tool
       rev: v6.2.0
       hooks:
         -   id: reuse
   -   repo: https://github.com/commitizen-tools/commitizen
-      rev: v4.11.3
+      rev: v4.18.0
       hooks:
         -   id: commitizen
   - repo: https://github.com/gitleaks/gitleaks
@@ -33,7 +33,7 @@ repos:
   # Project specific
   # OpenTofu
   - repo: https://github.com/tofuutils/pre-commit-opentofu
-    rev: v2.2.2
+    rev: v2.4.2
     hooks:
       - id: tofu_fmt
       - id: tofu_tflint
@@ -83,6 +83,6 @@ repos:
   #  rev: v25.12.1
   # GitHub Actions
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.10
+    rev: v1.7.12
     hooks:
       - id: actionlint-docker
