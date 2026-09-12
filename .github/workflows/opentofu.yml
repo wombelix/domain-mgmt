@@ -21,9 +21,6 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: eu-central-1
-  AWS_ACCOUNT_ID: '992382418145'
-  AWS_ROLE_NAME: GitHubOIDC-domain-mgmt-ResourceAccess
   TOFU_VERSION: '1.11.2'
 
 jobs:
@@ -33,11 +30,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/${{ env.AWS_ROLE_NAME }}
-          aws-region: ${{ env.AWS_REGION }}
+      - name: Load secrets from SSM
+        uses: wombelix/build-helper-scripts/.github/actions/load-ssm-secrets@main
 
       - name: Setup OpenTofu
         uses: opentofu/setup-opentofu@v1
@@ -47,12 +41,6 @@ jobs:
 
       - name: OpenTofu Init
         run: tofu init -input=false
-
-      - name: Install params2env
-        uses: wombelix/params2env@main
-
-      - name: Load secrets from SSM
-        run: params2env read
 
       - name: OpenTofu Plan
         run: tofu plan -input=false -compact-warnings -out=plan.file
