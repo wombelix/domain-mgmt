@@ -5,4 +5,7 @@
 module "dominik-wombacher_de" {
   source      = "./modules/domains"
   domain_name = "dominik-wombacher.de"
+  # .de domain has no admin contact at inwx anymore
+  # set to 0 to avoid constant changes on apply
+  contacts_admin = "0"
 }
