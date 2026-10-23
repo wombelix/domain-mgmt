@@ -27,6 +27,14 @@ resource "inwx_nameserver_record" "wombacher_dev_a_beastie" {
   ttl     = 3600
 }
 
+resource "inwx_nameserver_record" "wombacher_dev_a_lab" {
+  domain  = "wombacher.dev"
+  name    = "lab.wombacher.dev"
+  type    = "A"
+  content = "167.233.45.85"
+  ttl     = 3600
+}
+
 # Wildcard A record
 resource "inwx_nameserver_record" "wombacher_dev_a_wildcard" {
   domain  = "wombacher.dev"
@@ -61,6 +69,14 @@ resource "inwx_nameserver_record" "wombacher_dev_aaaa_beastie" {
   ttl     = 3600
 }
 
+resource "inwx_nameserver_record" "wombacher_dev_aaaa_lab" {
+  domain  = "wombacher.dev"
+  name    = "lab.wombacher.dev"
+  type    = "AAAA"
+  content = "2a01:4f8:1c18:c24a::1"
+  ttl     = 3600
+}
+
 # Wildcard AAAA record
 resource "inwx_nameserver_record" "wombacher_dev_aaaa_wildcard" {
   domain  = "wombacher.dev"
@@ -86,6 +102,14 @@ resource "inwx_nameserver_record" "wombacher_dev_cname_autoconfig" {
   name    = "autoconfig.wombacher.dev"
   type    = "CNAME"
   content = "mail.your-server.de"
+  ttl     = 3600
+}
+
+resource "inwx_nameserver_record" "wombacher_dev_cname_lab_wildcard" {
+  domain  = "wombacher.dev"
+  name    = "*.lab.wombacher.dev"
+  type    = "CNAME"
+  content = "lab.wombacher.dev"
   ttl     = 3600
 }
 
