@@ -27,6 +27,8 @@ resource "cloudflare_workers_custom_domain" "oidc_wombacher_dev" {
 }
 
 # Bot Fight Mode can't be skipped per hostname and could block the AWS STS fetch
+# Removing this resource only drops it from the state, Bot Fight Mode stays as set
+# Reset it in the dashboard or with the API, see the provider warning in bot_management/resource.go
 resource "cloudflare_bot_management" "wombacher_dev" {
   zone_id    = module.wombacher_dev_zone.zone_id
   fight_mode = false
