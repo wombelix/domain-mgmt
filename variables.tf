@@ -49,3 +49,9 @@ variable "project" {
   description = "OpenTofu IaC project name"
   default     = "domain-mgmt"
 }
+
+variable "cloudflare_account_id" {
+  type        = string
+  description = "Cloudflare Account ID that owns the zones"
+  default     = "0fb989a79852a99ebffa94c0b7b607a4"
+}
