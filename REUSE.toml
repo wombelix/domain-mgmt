@@ -1,0 +1,6 @@
+version = 1
+
+[[annotations]]
+path = "static/**"
+SPDX-FileCopyrightText = "2026 Dominik Wombacher <dominik@wombacher.cc>"
+SPDX-License-Identifier = "CC0-1.0"
