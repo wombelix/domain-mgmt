@@ -3,8 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 module "wombacher_dev" {
-  source      = "./modules/domains"
+  source      = "./modules/domains_delegated"
   domain_name = "wombacher.dev"
+  nameservers = ["ns.inwx.de", "ns2.inwx.de", "ns3.inwx.eu"]
   extra_data = {
     "ACKNOWLEDGE-SECURE-ONLY-DEV" = "1"
   }
@@ -12,8 +13,6 @@ module "wombacher_dev" {
   # set to 0 to avoid constant changes on apply
   contacts_admin   = "0"
   contacts_billing = "0"
-  caa_ttl          = 300
-  automated_dnssec = false
 }
 
 module "wombacher_dev_zone" {
