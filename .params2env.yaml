@@ -10,3 +10,4 @@ format: github-env
 params:
   - name: /projects/domain-mgmt/inwx_username
   - name: /projects/domain-mgmt/inwx_password
+  - name: /projects/domain-mgmt/cloudflare_api_token
