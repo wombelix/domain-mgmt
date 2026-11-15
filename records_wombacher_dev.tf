@@ -327,10 +327,11 @@ resource "cloudflare_dns_record" "wombacher_dev_txt_dmarc" {
 
 # SRV Records
 resource "cloudflare_dns_record" "wombacher_dev_srv_autodiscover" {
-  zone_id = module.wombacher_dev_zone.zone_id
-  name    = "_autodiscover._tcp.wombacher.dev"
-  type    = "SRV"
-  ttl     = 300
+  zone_id  = module.wombacher_dev_zone.zone_id
+  name     = "_autodiscover._tcp.wombacher.dev"
+  type     = "SRV"
+  priority = 0
+  ttl      = 300
   data = {
     priority = 0
     weight   = 100
@@ -340,10 +341,11 @@ resource "cloudflare_dns_record" "wombacher_dev_srv_autodiscover" {
 }
 
 resource "cloudflare_dns_record" "wombacher_dev_srv_imaps" {
-  zone_id = module.wombacher_dev_zone.zone_id
-  name    = "_imaps._tcp.wombacher.dev"
-  type    = "SRV"
-  ttl     = 300
+  zone_id  = module.wombacher_dev_zone.zone_id
+  name     = "_imaps._tcp.wombacher.dev"
+  type     = "SRV"
+  priority = 0
+  ttl      = 300
   data = {
     priority = 0
     weight   = 100
@@ -353,10 +355,11 @@ resource "cloudflare_dns_record" "wombacher_dev_srv_imaps" {
 }
 
 resource "cloudflare_dns_record" "wombacher_dev_srv_pop3s" {
-  zone_id = module.wombacher_dev_zone.zone_id
-  name    = "_pop3s._tcp.wombacher.dev"
-  type    = "SRV"
-  ttl     = 300
+  zone_id  = module.wombacher_dev_zone.zone_id
+  name     = "_pop3s._tcp.wombacher.dev"
+  type     = "SRV"
+  priority = 0
+  ttl      = 300
   data = {
     priority = 0
     weight   = 100
@@ -366,10 +369,11 @@ resource "cloudflare_dns_record" "wombacher_dev_srv_pop3s" {
 }
 
 resource "cloudflare_dns_record" "wombacher_dev_srv_submission" {
-  zone_id = module.wombacher_dev_zone.zone_id
-  name    = "_submission._tcp.wombacher.dev"
-  type    = "SRV"
-  ttl     = 300
+  zone_id  = module.wombacher_dev_zone.zone_id
+  name     = "_submission._tcp.wombacher.dev"
+  type     = "SRV"
+  priority = 0
+  ttl      = 300
   data = {
     priority = 0
     weight   = 100
