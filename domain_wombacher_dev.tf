@@ -13,4 +13,5 @@ module "wombacher_dev" {
   contacts_admin   = "0"
   contacts_billing = "0"
   caa_ttl          = 300
+  automated_dnssec = false
 }
