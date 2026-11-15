@@ -9,9 +9,15 @@ terraform {
       source  = "inwx/inwx"
       version = "1.6.4"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "5.28.1"
+    }
   }
 }
 
 provider "inwx" {
   api_url = "https://api.domrobot.com/jsonrpc/"
 }
+
+provider "cloudflare" {}

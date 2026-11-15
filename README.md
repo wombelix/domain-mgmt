@@ -24,7 +24,7 @@ The majority of DNS records are handled outside this repo.
 
 ## Usage
 
-To interact with AWS (S3 Backend and KMS encryption) and inwx,
+To interact with AWS (S3 Backend and KMS encryption), inwx and Cloudflare,
 the following Environment variables have to be set:
 
 ```text
@@ -38,6 +38,7 @@ TF_VAR_aws_s3_bucket
 TF_VAR_project
 INWX_USERNAME
 INWX_PASSWORD
+CLOUDFLARE_API_TOKEN
 ```
 
 Variables with `TF_VAR_` prefix can also be defined
