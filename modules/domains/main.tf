@@ -17,18 +17,21 @@ resource "inwx_nameserver_record" "tld_caa_issue" {
   name    = inwx_nameserver.tld.domain
   type    = "CAA"
   content = "0 issue \"letsencrypt.org\""
+  ttl     = var.caa_ttl
 }
 resource "inwx_nameserver_record" "tld_caa_issuewild" {
   domain  = inwx_nameserver.tld.domain # Records depend on nameserver resource
   name    = inwx_nameserver.tld.domain
   type    = "CAA"
   content = "0 issuewild \"letsencrypt.org\""
+  ttl     = var.caa_ttl
 }
 resource "inwx_nameserver_record" "tld_caa_iodef" {
   domain  = inwx_nameserver.tld.domain # Records depend on nameserver resource
   name    = inwx_nameserver.tld.domain
   type    = "CAA"
   content = "0 iodef \"mailto:${var.caa_iodef_mailto}\""
+  ttl     = var.caa_ttl
 }
 
 # inwx domain

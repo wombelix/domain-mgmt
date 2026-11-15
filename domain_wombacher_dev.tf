@@ -12,4 +12,5 @@ module "wombacher_dev" {
   # set to 0 to avoid constant changes on apply
   contacts_admin   = "0"
   contacts_billing = "0"
+  caa_ttl          = 300
 }

@@ -92,6 +92,12 @@ variable "caa_iodef_mailto" {
   default     = "dominik@wombacher.cc"
 }
 
+variable "caa_ttl" {
+  type        = number
+  description = "TTL of the CAA records"
+  default     = 3600
+}
+
 # Domain extra data
 variable "extra_data" {
   type        = map(string)
