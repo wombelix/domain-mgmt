@@ -5,7 +5,7 @@
 module "wombacher_dev" {
   source      = "./modules/domains_delegated"
   domain_name = "wombacher.dev"
-  nameservers = ["ns.inwx.de", "ns2.inwx.de", "ns3.inwx.eu"]
+  nameservers = module.wombacher_dev_zone.name_servers
   extra_data = {
     "ACKNOWLEDGE-SECURE-ONLY-DEV" = "1"
   }
