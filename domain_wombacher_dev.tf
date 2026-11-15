@@ -16,10 +16,9 @@ module "wombacher_dev" {
   automated_dnssec = false
 }
 
-resource "cloudflare_zone" "wombacher_dev" {
-  account = {
-    id = var.cloudflare_account_id
-  }
-  name = "wombacher.dev"
-  type = "full"
+module "wombacher_dev_zone" {
+  source      = "./modules/dns_zone_cloudflare"
+  account_id  = var.cloudflare_account_id
+  domain_name = "wombacher.dev"
+  caa_ttl     = 300
 }
