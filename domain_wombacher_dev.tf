@@ -6,6 +6,7 @@ module "wombacher_dev" {
   source      = "./modules/domains_delegated"
   domain_name = "wombacher.dev"
   nameservers = module.wombacher_dev_zone.name_servers
+  dnssec_key  = module.wombacher_dev_zone.dnssec_key
   extra_data = {
     "ACKNOWLEDGE-SECURE-ONLY-DEV" = "1"
   }

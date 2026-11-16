@@ -20,3 +20,12 @@ resource "inwx_domain" "tld" {
     destroy = false # never call domain.delete at INWX in delegated module
   }
 }
+
+# DS at the registry for the zone signed by the DNS provider
+resource "inwx_dnssec_key" "tld" {
+  count = var.dnssec_key == null ? 0 : 1
+
+  domain     = inwx_domain.tld.name
+  public_key = var.dnssec_key.public_key
+  algorithm  = var.dnssec_key.algorithm
+}

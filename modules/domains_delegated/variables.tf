@@ -60,3 +60,12 @@ variable "extra_data" {
   description = "Extra data for the domain"
   default     = {}
 }
+
+variable "dnssec_key" {
+  type = object({
+    public_key = string
+    algorithm  = number
+  })
+  description = "DNSSEC key of the DNS provider, sent to the registry as DS. null means no DS."
+  default     = null
+}
