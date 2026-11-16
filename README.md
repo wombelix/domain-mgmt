@@ -55,9 +55,9 @@ in a `terraform.tfvars` file instead, for example:
 project = "domain-mgmt"
 ```
 
-To managed already existing domains, use
-`tofu import module.<modulename>.inwx.inwx_domain <resourcename>`, example:
-`tofu import module.wombacher_cc.inwx.inwx_domain wombacher.cc`
+To manage already existing domains, use
+`tofu import module.<modulename>.inwx_domain.tld <domainname>`, example:
+`tofu import module.wombacher_cc.inwx_domain.tld wombacher.cc`
 
 ## Source
 
