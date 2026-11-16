@@ -47,3 +47,11 @@ resource "cloudflare_dns_record" "caa_iodef" {
     value = "mailto:${var.caa_iodef_mailto}"
   }
 }
+
+# DNSSEC signing, the DS at the registrar is set outside this module
+resource "cloudflare_zone_dnssec" "zone" {
+  count = var.dnssec ? 1 : 0
+
+  zone_id = cloudflare_zone.zone.id
+  status  = "active"
+}

@@ -24,3 +24,9 @@ variable "caa_ttl" {
   description = "TTL of the CAA records"
   default     = 3600
 }
+
+variable "dnssec" {
+  type        = bool
+  description = "Enable DNSSEC signing for the zone."
+  default     = true
+}
