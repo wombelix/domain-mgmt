@@ -49,9 +49,22 @@ resource "cloudflare_dns_record" "caa_iodef" {
 }
 
 # DNSSEC signing, the DS at the registrar is set outside this module
+# To turn off: remove the DS first, wait for its TTL, then set dnssec = false
 resource "cloudflare_zone_dnssec" "zone" {
   count = var.dnssec ? 1 : 0
 
   zone_id = cloudflare_zone.zone.id
   status  = "active"
+
+  lifecycle {
+    # API reports "pending" until the registry publishes the DS, see check below
+    ignore_changes = [status]
+  }
+}
+
+check "dnssec_active" {
+  assert {
+    condition     = alltrue([for z in cloudflare_zone_dnssec.zone : z.status == "active"])
+    error_message = "DNSSEC on ${var.domain_name} is not active. Pending DS at the registry or changed outside of tofu."
+  }
 }
