@@ -6,8 +6,15 @@ SPDX-License-Identifier: Apache-2.0
 
 # Domain management
 
-OpenTofu based management of my Domains on inwx.
+OpenTofu based management of my Domains.
+Domains are registered at inwx. DNS zones are hosted at inwx or Cloudflare.
 The majority of DNS records are handled outside this repo.
+
+* `modules/domains`: domain and DNS zone at inwx, with automated DNSSEC
+* `modules/domains_delegated`: domain at inwx, DNS zone at another provider,
+  DS from that provider's key
+* `modules/dns_zone_cloudflare`: DNS zone at Cloudflare with default CAA
+  records and DNSSEC
 
 <!-- markdownlint-disable MD013 -->
 [![REUSE status](https://api.reuse.software/badge/github.com/wombelix/domain-mgmt)](https://api.reuse.software/info/github.com/wombelix/domain-mgmt)
