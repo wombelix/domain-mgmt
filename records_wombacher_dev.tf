@@ -21,15 +21,6 @@ resource "cloudflare_dns_record" "wombacher_dev_a_www" {
   proxied = false
 }
 
-resource "cloudflare_dns_record" "wombacher_dev_a_beastie" {
-  zone_id = module.wombacher_dev_zone.zone_id
-  name    = "beastie.wombacher.dev"
-  type    = "A"
-  content = "212.227.100.212"
-  ttl     = 300
-  proxied = false
-}
-
 resource "cloudflare_dns_record" "wombacher_dev_a_lab" {
   zone_id = module.wombacher_dev_zone.zone_id
   name    = "lab.wombacher.dev"
@@ -64,15 +55,6 @@ resource "cloudflare_dns_record" "wombacher_dev_aaaa_www" {
   name    = "www.wombacher.dev"
   type    = "AAAA"
   content = "2a01:4f8:d0a:5287::2"
-  ttl     = 300
-  proxied = false
-}
-
-resource "cloudflare_dns_record" "wombacher_dev_aaaa_beastie" {
-  zone_id = module.wombacher_dev_zone.zone_id
-  name    = "beastie.wombacher.dev"
-  type    = "AAAA"
-  content = "2a01:239:24d:600::1"
   ttl     = 300
   proxied = false
 }
